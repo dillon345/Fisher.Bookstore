@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Fisher.Bookstore.Controllers
+{
+    public class AboutController : Controller
+    {
+        public IActionResult Index()
+        {
+            return Content("This is the index section of the AboutController.");
+        }
+
+        public IActionResult History()
+        {
+            return Content("This is the history section of the AboutController.");
+        }
+
+        public IActionResult Location()
+        {
+            return Content("This is the location section of the AboutController.");
+        }
+    }
+}
