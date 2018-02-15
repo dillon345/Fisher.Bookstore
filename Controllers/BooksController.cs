@@ -11,12 +11,38 @@ namespace Fisher.Bookstore.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var books = GetBooks();
+            return View(books); 
         }
 
         public IActionResult New()
         {
             return View();
+        } 
+
+        private IEnumerable<Book> GetBooks()
+        {
+            var books = new List<Book>();
+
+            books.Add(new Book()
+            {
+                Title = "Continuous Delivery",
+                Author = new Author() { Name = "Jez Humble" }
+            });
+            
+            books.Add(new Book()
+            {
+                Title = "Lean Enterprise",
+                Author = new Author() { Name = "Barry O'Reilly" }
+            });
+
+            books.Add(new Book()
+            {
+                Title = "The Goal",
+                Author = new Author() { Name = "Eliyahu Goldratt" }
+            });
+
+            return books;
         }
-    }
+    }    
 }
